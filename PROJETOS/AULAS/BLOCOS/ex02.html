@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja bem vindo!</title>
+</head>
+<style>
+    body{
+        background-color: blueviolet;
+        color: white;
+        font: normal 18pt arial;
+    }
+</style>
+<body>
+  <h1>Curso de logica</h1>
+    <p>Blockly</p>
+    <script>
+var nome, idade;
+
+
+nome = window.prompt('Digite seu nome:');
+idade = Number(window.prompt('Digite sua idade:'));
+if (idade >= 18) {
+  window.alert('Cadastro realizado com sucesso!');
+} else {
+  window.alert('voce é de menor');
+}
+while (idade <= 17) {
+  window.alert('Digite idade novamente!');
+  idade = Number(window.prompt('Digite sua idade:'));
+}
+if (idade >= 18) {
+  window.alert('Cadastro concluido!!!');
+}
+    </script>
+</body>
+</html>
