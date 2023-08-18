@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja bem vindo ao curso de JS</title>
+</head>
+<style>
+  body {
+    background-color: blueviolet;
+    color: white;
+    font: normal 18pt arial;
+  }  
+</style>
+<body>
+   <h1>Aprendendo logica no JS!</h1> 
+   <p>Bons estudos!</p>
+   <script>
+    // Função para calcular e imprimir a tabuada de um número
+    function tabuada(numero) {
+  document.write(`Tabuada de ${numero}:<br>`);
+  for (let i = 1; i <= 10; i++) {
+    document.write(`${numero} x ${i} = ${numero * i}<br>`);
+  }
+}
+// Solicita o número inteiro ao usuário
+alert("Esse algoritmo solicita que seja digitado um número inteiro e que no final vai imprimir o resultado da tabuada desse número!")
+const numeroDigitado = prompt("Digite um número inteiro para a tabuada:");
+const numeroInteiro = parseInt(numeroDigitado);
+// Chama a função para calcular e imprimir a tabuada do número
+{tabuada(numeroInteiro);}
+   </script>
+</body>
+</html>

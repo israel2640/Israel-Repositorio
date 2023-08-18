@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja bem vindo ao curso de JS</title>
+</head>
+<style>
+  body {
+    background-color: blueviolet;
+    color: white;
+    font: normal 18pt arial;
+  }  
+</style>
+<body>
+   <h1>A prendendo logica no JS!</h1> 
+   <p>Bons estudos!</p>
+   <script>
+var nota1, nota2, soma, media;
+
+
+nota1 = Number(window.prompt('Digite nota 1'));
+nota2 = Number(window.prompt('Digite nota 2'));
+soma = nota1 + nota2;
+media = soma / 2;
+if (media >= 7) {
+  window.alert('Você foi aprovado');
+  window.alert('Sua média é:');
+  window.alert(media);
+} else {
+  window.alert('Você foi reprovado');
+  window.alert('Sua média é:');
+  window.alert(media);
+}
+   </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja bem vindo ao curso de JS</title>
+</head>
+<style>
+  body {
+    background-color: blueviolet;
+    color: white;
+    font: normal 18pt arial;
+  }  
+</style>
+<body>
+   <h1>Aprendendo logica no JS!</h1> 
+   <p>Bons estudos!</p>
+   <script>
+      window.alert("Esse é um algoritmo que vai descobrir, através de perguntas e respostas, qual é o meio de transporte que o usuário está considerando. O usuário deve escolher uma das seguintes opções: trator ou moto ou bicicleta. Para chegar ao resultado, as perguntas precisam ser respondidas apenas com 'Sim' ou 'Não'! ")                                                                                                                                                                                                                                                                          
+
+    
+      
+ //Função para fazer uma pergunta e obter a resposta do usuário   
+function fazerPergunta(pergunta) {
+  const resposta = prompt(pergunta + " (Responda com Sim ou Não)").toLowerCase();
+  return resposta === "sim";
+}
+// Função para descobrir o meio de transporte com base nas respostas do usuário
+function descobrirMeioDeTransporte() {
+  const terrestre = fazerPergunta("É terrestre?");
+  const umaPessoa = fazerPergunta("Cabe apenas uma pessoa ou tem bagageiro?");
+  const pesado = fazerPergunta("É pesado?");
+  const temPedal = fazerPergunta("Tem pedal?");
+
+  if (terrestre) {
+    if (umaPessoa && !pesado && temPedal) {
+      return "bicicleta";
+    } else if (!umaPessoa && !pesado && !temPedal) {
+      return "moto";
+    } else if (!umaPessoa && pesado && !temPedal) {
+      return "trator";
+    }
+  }
+
+  return "não foi possível identificar o meio de transporte considerado.";
+}
+// Chamada da função para iniciar o processo de perguntas e respostas
+const meioDeTransporteEscolhido = descobrirMeioDeTransporte();
+alert(`Então, o transporte escolhido foi: ${meioDeTransporteEscolhido}.`);
+   </script>
+</body>
+</html>

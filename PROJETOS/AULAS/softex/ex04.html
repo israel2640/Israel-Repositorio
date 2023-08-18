@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja bem vindo ao curso de JS</title>
+</head>
+<style>
+  body {
+    background-color: blueviolet;
+    color: white;
+    font: normal 18pt arial;
+  }  
+</style>
+<body>
+   <h1>A prendendo logica no JS!</h1> 
+   <p>Bons estudos!</p>
+   <script>
+const candidatos = {
+  candidato_X: 0,
+  candidato_Y: 0,
+  candidato_Z: 0,
+  branco: 0,
+  nulo: 0,
+};
+
+function realizarVoto() {
+  const voto = prompt("Digite o número do candidato para votar (1 para X, 2 para Y, 3 para Z, ou deixe em branco para voto em branco):");
+  
+  if (voto === "") {
+    candidatos.branco++;
+    alert("Voto em branco registrado.");
+  } else if (isNaN(voto)) {
+    console.log("Voto inválido. Por favor, insira um número válido.");
+  } else {
+    const numeroVoto = parseInt(voto);
+    switch (numeroVoto) {
+      case 1:
+        candidatos.candidato_X++;
+        alert("Voto para o candidato X registrado.");
+        break;
+      case 2:
+        candidatos.candidato_Y++;
+        alert("Voto para o candidato Y registrado.");
+        break;
+      case 3:
+        candidatos.candidato_Z++;
+        alert("Voto para o candidato Z registrado.");
+        break;
+      default:
+        candidatos.nulo++;
+        console.log("Voto nulo registrado.");
+        break;
+    }
+  }
+  
+  const finalizar = prompt("Deseja finalizar a votação? (sim ou não)").toLowerCase();
+  if (finalizar === "sim") {
+    exibirResultado();
+  } else {
+    realizarVoto();
+  }
+}
+
+function exibirResultado() {
+  alert("Resultado da eleição:");
+  alert(`Candidato X: ${candidatos.candidato_X} votos`);
+  alert(`Candidato Y: ${candidatos.candidato_Y} votos`);
+  alert(`Candidato Z: ${candidatos.candidato_Z} votos`);
+  alert(`Votos em branco: ${candidatos.branco} votos`);
+  alert(`Votos nulos: ${candidatos.nulo} votos`);
+  
+  const vencedor = Object.keys(candidatos).reduce((a, b) => candidatos[a] > candidatos[b] ? a : b);
+  alert(`Vencedor: ${vencedor} com ${candidatos[vencedor]} votos`);
+}
+
+realizarVoto();
+
+   </script>
+</body>
+</html>
