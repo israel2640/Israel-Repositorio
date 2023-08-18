@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios de blocos</title>
+</head>
+<style>
+body{background-color: aqua;
+    color: black;
+    font: normal 18pt arial;
+}
+
+</style>
+<body>
+ <h1>Seja bem vindo ao curso de JS!</h1> 
+ <p>Programação em bloco!</p>
+  
+  <script>
+  var opcao = 1;
+while (opcao !== 0) {
+  opcao = parseFloat(prompt("1: soma\n2: subtração\n3: multiplicação\n4: divisão\n0: sair"));
+  
+  if (opcao === 0) {
+    break;
+  } else if (opcao >= 1 && opcao <= 4) {
+    var valor1 = parseFloat(prompt("Digite o primeiro valor:"));
+    var valor2 = parseFloat(prompt("Digite o segundo valor:"));
+    var resultado;
+
+    if (opcao === 1) {
+      resultado = valor1 + valor2;
+    } else if (opcao === 2) {
+      resultado = valor1 - valor2;
+    } else if (opcao === 3) {
+      resultado = valor1 * valor2;
+    } else if (opcao === 4) {
+      resultado = valor1 / valor2;
+    }
+
+    alert("Resultado: " + resultado);
+  } else {
+    alert("Essa opção não existe");
+  }
+}
+ </script>
+</body>
+</html>

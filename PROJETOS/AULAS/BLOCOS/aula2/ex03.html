@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios de blocos</title>
+</head>
+<style>
+body{background-color: aqua;
+    color: black;
+    font: normal 18pt arial;
+}
+
+</style>
+<body>
+ <h1>Seja bem vindo ao curso de JS!</h1> 
+ <p>Calculadora de Idade!</p>
+  
+  <script>
+        function calcularIdade() {
+      var nomeCompleto = prompt("Digite seu nome completo:");
+      var anoNascimento = prompt("Digite seu ano de nascimento (entre 1922 e 2021):");
+
+      // Verifica se o ano de nascimento é um número válido entre 1922 e 2021
+      while (isNaN(anoNascimento) || anoNascimento < 1922 || anoNascimento > 2021) {
+        anoNascimento = prompt("Ano de nascimento inválido. Digite novamente (entre 1922 e 2021):");
+      }
+
+      var idade = 2022 - anoNascimento;
+      var mensagem = "Olá, " + nomeCompleto + "! Em 2022, você completará ou já completou " + idade + " anos.";
+
+      alert(mensagem);
+    }
+    calcularIdade();
+   </script>
+</body>
+</html>
