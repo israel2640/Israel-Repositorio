@@ -1,0 +1,21 @@
+h1 {
+    color: brown;
+    border-style: outset;
+    background-color: rgb(178, 207, 178);
+    font-family: Tahoma, Verdana, sans-serif;
+    text-align: center;
+}
+div {
+    width: 300px;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 20px;
+  }
+  table, th, td {
+border-style: solid;
+border-color: black;
+border-collapse: collapse;
+   width: 100%;
+}
+
+

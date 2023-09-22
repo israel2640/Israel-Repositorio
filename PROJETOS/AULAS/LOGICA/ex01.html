@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logica de programação</title>
+</head>
+<style>
+  body {background-color: black;}
+  div {
+    text-align: center;
+  }
+</style>
+
+<div>
+  <img src="urna eletronica.jpeg">
+</div>
+<body>
+      <script>
+   const candidatos = [
+  { número: 1, nome: "Candidato X", votos: 889 },
+  { número: 2, nome: "Candidato Y", votos: 847 },
+  { número: 3, nome: "Candidato Z", votos: 515 },
+];
+
+let votos = 0;
+let brancos = 0;
+let nulos = 0;
+
+while (true) {
+  let voto = prompt("Digite o número do seu voto (1, 2 ou 3): ");
+
+  if (voto === "" || voto === null) {
+    alert("Voto inválido.");
+    continue;
+  }
+
+  try {
+    voto = parseInt(voto);
+  } catch (e) {
+    alert("Voto inválido.");
+    continue;
+  }
+
+  if (voto === 1) {
+    candidatos[0].votos++;
+  } else if (voto === 2) {
+    candidatos[1].votos++;
+  } else if (voto === 3) {
+    candidatos[2].votos++;
+  } else {
+    nulos++;
+  }
+
+  votos++;
+
+  let encerrar = prompt("Deseja encerrar a votação? (S/N): ");
+
+  if (encerrar.toLowerCase() === "s") {
+    break;
+  }
+}
+
+const vencedor = candidatos.find((candidato) => candidato.votos === Math.max(...candidatos.map((candidato) => candidato.votos)));
+
+alert(`Votação encerrada.
+
+**Resultados:**
+
+* Vencedor: ${vencedor.nome} (${vencedor.votos} votos)
+* Candidato X: ${candidatos[0].votos} votos
+* Candidato Y: ${candidatos[1].votos} votos
+* Candidato Z: ${candidatos[2].votos} votos
+* Brancos: ${brancos} votos
+* Nulos: ${nulos} votos`);
+
+  </script>
+  </body>
+</html>
