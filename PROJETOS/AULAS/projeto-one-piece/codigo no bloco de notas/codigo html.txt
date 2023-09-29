@@ -1,3 +1,5 @@
+nome do arquivo => *index.html* (o codigo HTML é dessa linha para baixo)
+----------------------------------------------------
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -10,8 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik&family=Secular+One&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./src/css/reset.css">
+
     <link rel="stylesheet" href="./src/css/estilos.css">
-    <link rel="stylesheet" href="./src/css/responsivo.css">
     
     <title>One Piece - Semana do Zero ao Programador Contratado</title>
     </head>

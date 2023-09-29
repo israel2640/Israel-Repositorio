@@ -1,0 +1,11 @@
+nome do arquivo => *reset.css* o codigo é dessa linha para baixo
+-------------------------------------------------------------------
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+ul {
+    list-style: nome;
+}
