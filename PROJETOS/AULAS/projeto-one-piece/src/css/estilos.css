@@ -32,12 +32,12 @@ main .personagem .imagem {
         position: absolute;
     top: 0;
     left: 120px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
     max-width: 380px;
+    z-index: 1;
 }
 .conteudo .nome-personagem {
     color: #ffffff;
@@ -60,3 +60,17 @@ main .personagem .imagem {
     width: 230px;
     margin-bottom: 35px;
 }
+
+
+button {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: orange;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+}
+
