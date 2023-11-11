@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Carrossel com Descrições">
+    <meta name="keywords" content="carrossel, HTML, CSS, JavaScript">
+    <meta name="author" content="Israel Paz">
+
+    <title>Carrossel com Descrições</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #carrossel-container {
+            width: 70%;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #carrossel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .descricao {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        button {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            transform: translateY(-50%);
+        }
+
+        #prev {
+            left: 10px;
+        }
+
+        #next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="carrossel-container">
+        <div id="carrossel">
+            <div class="slide">
+                <img src="imagens/igreja do carmo.jpg" alt="Igreja do Carmo">
+                <div class="descricao">Igreja do Carmo</div>
+            </div>
+            <div class="slide">
+                <img src="imagens/paço do frevo.jpeg" alt="O paço do frevo">
+                <div class="descricao">O paço do Frevo</div>
+            </div>
+            <div class="slide">
+                <img src="imagens/museu cais do sertão.jpg" alt="Museu Cais do Sertão">
+                <div class="descricao">Museu Cais do Sertão</div>
+            </div>
+            <div class="slide">
+                <img src="imagens/rio capibaribe.jpg" alt="Rio Capibaribe">
+                <div class="descricao">Rio Capibaribe</div>
+            </div>
+        </div>
+    </div>
+
+    <button id="prev" onclick="prevSlide()">‹</button>
+    <button id="next" onclick="nextSlide()">›</button>
+
+    <script>
+        const carrossel = document.getElementById("carrossel");
+        let currentIndex = 0;
+
+        function nextSlide() {
+            if (currentIndex < 3) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateCarrossel();
+        }
+
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = 3;
+            }
+            updateCarrossel();
+        }
+
+        function updateCarrossel() {
+            const translateValue = -currentIndex * 100 + "%";
+            carrossel.style.transform = "translateX(" + translateValue + ")";
+        }
+    </script>
+
+</body>
+</html>
