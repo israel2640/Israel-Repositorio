@@ -15,7 +15,7 @@ function conectarAoBanco() {
             console.error('Erro ao conectar ao banco de dados:', erro.message);
         } else {
             console.log('Conexão bem-sucedida com o banco de dados.');
-            // Execute consultas ou outras operações aqui, se necessário
+            
         }
     });
 }
@@ -23,7 +23,5 @@ function conectarAoBanco() {
 // Chamada da função para conectar ao banco de dados
 conectarAoBanco();
 
-// Importante: Não se esqueça de fechar a conexão quando terminar de usá-la
-// Você pode fazer isso chamando conexao.end() quando estiver pronto para desconectar
-// Isso é especialmente importante em ambientes de produção
+
 
