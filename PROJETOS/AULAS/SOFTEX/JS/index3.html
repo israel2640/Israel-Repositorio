@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    // Solicitar ao usuário que insira dois valores
+var valor1 = parseFloat(prompt("Digite o primeiro valor:"));
+var valor2 = parseFloat(prompt("Digite o segundo valor:"));
+
+// Solicitar ao usuário que insira o operador
+var operador = prompt("Digite o operador (+, -, *, /):");
+
+// Verificar o operador e realizar a operação correspondente
+var resultado;
+var resto;
+
+switch (operador) {
+    case '+':
+        resultado = valor1 + valor2;
+        console.log("Resultado da soma: " + resultado);
+        break;
+    case '-':
+        resultado = valor1 - valor2;
+        console.log("Resultado da subtração: " + resultado);
+        break;
+    case '*':
+        resultado = valor1 * valor2;
+        console.log("Resultado da multiplicação: " + resultado);
+        break;
+    case '/':
+        if (valor2 !== 0) {
+            resultado = Math.floor(valor1 / valor2); // Divisão inteira
+            resto = valor1 % valor2; // Resto da divisão
+            console.log("Resultado da divisão: " + resultado);
+            console.log("Resto da divisão: " + resto);
+        } else {
+            console.log("Não é possível dividir por zero.");
+        }
+        break;
+    default:
+        console.log("Operador inválido. Por favor, use +, -, *, ou /.");
+}
+
+  </script>  
+</body>
+</html>
