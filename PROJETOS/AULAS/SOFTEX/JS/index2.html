@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de média</title>
+</head>
+<body>
+    <script>
+// Solicitar ao usuário que insira as três notas
+var nota1 = parseFloat(prompt("Digite a primeira nota (entre 0 e 10):"));
+var nota2 = parseFloat(prompt("Digite a segunda nota (entre 0 e 10):"));
+var nota3 = parseFloat(prompt("Digite a terceira nota (entre 0 e 10):"));
+
+// Verificar se as notas estão dentro do intervalo permitido
+if (nota1 >= 0 && nota1 <= 10 && nota2 >= 0 && nota2 <= 10 && nota3 >= 0 && nota3 <= 10) {
+    // Calcular a média
+    var media = (nota1 + nota2 + nota3) / 3;
+
+    // Exibir o resultado no console
+    console.log("A média das notas é: " + media.toFixed(2)); // O método toFixed(2) limita o número de casas decimais a duas
+} else {
+    // Caso as notas estejam fora do intervalo permitido
+    console.log("Por favor, insira notas válidas entre 0 e 10.");
+}
+
+    </script>
+</body>
+</html>
