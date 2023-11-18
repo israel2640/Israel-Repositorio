@@ -1,35 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
     <script>
-        const { MongoClient } = require('mongodb');
+        try {
+    // Solicitar ao usuário que insira dois números
+    var numero1 = parseFloat(prompt("Digite o primeiro número:"));
+    var numero2 = parseFloat(prompt("Digite o segundo número:"));
 
-// Configurações do banco de dados
-const uri = 'mongodb://localhost:27017'; // URI de conexão com o MongoDB
-const dbName = 'meuBancoDeDados'; // Nome do banco de dados
-
-// Função para conectar ao banco de dados
-async function conectarAoBanco() {
-    try {
-        // Cria uma instância do cliente MongoDB
-        const cliente = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
-        // Conecta ao banco de dados
-        await cliente.connect();
-
-        console.log('Conexão bem-sucedida com o banco de dados.');
-    } catch (erro) {
-        console.error('Erro ao conectar ao banco de dados:', erro.message);
+    // Verificar se o segundo número é zero
+    if (numero2 === 0) {
+        throw new Error("Divisão por zero não é permitida.");
     }
-}
 
-// Chamada da função para conectar ao banco de dados
-conectarAoBanco();
+    // Realizar a operação de divisão
+    var resultado = numero1 / numero2;
+
+    // Exibir o resultado
+    console.log(`Resultado da divisão: ${resultado}`);
+} catch (erro) {
+    // Capturar e tratar exceções
+    console.error(`Erro: ${erro.message}`);
+} finally {
+    // Bloco opcional: executado sempre, independentemente de ocorrer uma exceção ou não
+    console.log("O bloco 'finally' sempre é executado.");
+}
 
     </script>
 </body>
