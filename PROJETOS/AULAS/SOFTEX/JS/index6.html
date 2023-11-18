@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const { MongoClient } = require('mongodb');
+
+// Configurações do banco de dados
+const uri = 'mongodb://localhost:27017'; // URI de conexão com o MongoDB
+const dbName = 'meuBancoDeDados'; // Nome do banco de dados
+
+// Função para conectar ao banco de dados
+async function conectarAoBanco() {
+    try {
+        // Cria uma instância do cliente MongoDB
+        const cliente = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+        // Conecta ao banco de dados
+        await cliente.connect();
+
+        console.log('Conexão bem-sucedida com o banco de dados.');
+    } catch (erro) {
+        console.error('Erro ao conectar ao banco de dados:', erro.message);
+    }
+}
+
+// Chamada da função para conectar ao banco de dados
+conectarAoBanco();
+
+    </script>
+</body>
+</html>
