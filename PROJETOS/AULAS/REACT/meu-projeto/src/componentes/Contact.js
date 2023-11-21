@@ -1,7 +1,7 @@
 const Contact = () => {
     return(
         <div>
-            <a href="mailto:endrigo@soft.com.br" className="App-link">Entre em contato</a>
+            <a href="e-mail:israelnetmax@gmail.com" className="App-link">Entre em contato</a>
         </div>
     );
 }
